@@ -1,0 +1,161 @@
+
+/*-----------------------------------------*/
+
+.knossys-dark .klist {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-family: Arial;
+  font-size: 10pt;
+  color: #cdc9c9;
+  padding: 2px 4px 2px 4px;  
+}
+
+.klist li {
+  position: relative;
+  list-style-type: none;
+  padding-left: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.klist li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 4px;
+  border: 1px solid grey;
+  background: #545353;
+}
+
+/*-----------------------------------------*/
+
+.knossys-dark .kcheck-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-family: Arial;
+  /*background: #4c4c4c;*/
+  color: #cdc9c9;
+  padding: 2px 4px 2px 4px;   
+}
+
+.kcheck-list .kcheck-default {
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.kcheck-list .kcheck-default:hover {
+  color: white;
+}
+
+.kcheck-list .kcheck-default:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 13px;
+  height: 12px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #4a4a4a;
+  transform-origin: bottom left;
+  /* transform: rotate(45deg); */  
+}
+
+.kcheck-list .kcheck-checked {
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.kcheck-list .kcheck-checked:hover {
+  color: white;
+}
+
+.kcheck-list .kcheck-checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 5px;
+  height: 12px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: #ffffff;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+
+/*-----------------------------------------*/
+
+.knossys-dark .kradio-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-family: Arial;
+  /*background: #4c4c4c;*/
+  color: #cdc9c9;
+  padding: 2px 4px 2px 4px;   
+}
+
+.kradio-list .kradio-default {
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.kradio-list .kradio-default:hover {
+  color: white;
+}
+
+.kradio-list .kradio-default:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 13px;
+  height: 12px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #4a4a4a;
+  transform-origin: bottom left;
+  border-radius: 8px;
+}
+
+.kradio-list .kradio-checked {
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+.kradio-list .kradio-checked:hover {
+  color: white;
+}
+
+.kradio-list .kradio-checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 13px;
+  height: 12px;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #4a4a4a;
+  transform-origin: bottom left;
+  border-radius: 8px;
+  background: #fbe9b6;
+}

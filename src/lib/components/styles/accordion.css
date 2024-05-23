@@ -1,0 +1,77 @@
+
+
+.kaccordion-basic {
+  max-width: 600px;
+  /*margin: 2rem auto;*/
+}
+
+.kaccordion-basic .kaccordion-item {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #565555;
+  margin-top: 2px;
+  margin-bottom: 2px;  
+}
+
+.kaccordion-basic .kaccordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #404040;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.kaccordion-basic .kaccordion-title:hover {
+  background-color: #373838;
+}
+
+.kaccordion-basic .kaccordion-title,
+.kaccordion-basic .kaccordion-content {
+  padding: 1rem;
+}
+
+.kaccordion-basic .kaccordion-content {
+  background-color: #535454;
+}
+
+
+
+
+.kaccordion {
+  max-width: 600px;
+  /*margin: 2rem auto;*/
+}
+
+.kaccordion .kaccordion-item {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #565555;
+  margin-top: 2px;
+  margin-bottom: 2px;  
+}
+
+.kaccordion .kaccordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #404040;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.kaccordion .kaccordion-title:hover {
+  background-color: #373838;
+}
+
+.kaccordion .kaccordion-title,
+.kaccordion .kaccordion-content {
+  padding: 8px;
+}
+
+.kaccordion .kaccordion-content {
+  background-color: #535454;
+  overflow: hidden;
+}

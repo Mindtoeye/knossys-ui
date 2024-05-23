@@ -1,0 +1,32 @@
+
+.knossys-dark .khseparator {
+  margin: 2px;
+  margin-bottom: 4px;
+  background: #3c3b3b;
+  height: 1px;
+}
+
+.knossys-dark .kbr {
+  margin: 2px;
+  background: #3c3b3b;
+  height: 1px;  
+}
+
+.knossys-dark .kreference {
+  padding: 2px;
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+}
+
+.knossys-dark .kreference a {
+  color: #fbe9b6;
+  font-size: 7pt;
+}
+
+.klabel {
+  padding: 2px;
+  padding-left: 4px;  
+  padding-top: 4px;
+  color: #fbe9b6
+}

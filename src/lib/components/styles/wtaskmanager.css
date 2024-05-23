@@ -1,0 +1,61 @@
+
+.wtaskmanager {
+  color: lightgrey;
+  width: 100%;
+  overflow: auto;
+  padding: 3px;
+  background: #202020;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.wtaskmanageritem {
+  border: 1px solid #505050;
+  border-radius: 3px;
+  margin: 4px;
+  margin-bottom: 8px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  background: #363636;
+}
+
+.wtaskmanagertitle {
+  flex: 0;
+  background: #444444;
+  padding: 3px;
+  line-height: 10pt;
+  border: 1px solid #545454;
+  border-radius: 3px;
+}
+
+.wtaskmanagertitle:hover {
+  background: #525252;
+}
+
+.wtaskitemselected {
+  flex: 0;
+  background: black;
+  padding: 3px;
+  line-height: 10pt;
+  border: 1px solid #545454;
+  border-radius: 3px;
+}
+
+.wtaskmanagercontent {
+  flex: 1;
+  font-size: 7pt;
+}
+
+.wtasklist {
+  flex: 1;
+  /* https://www.peakpx.com/en/hd-wallpaper-desktop-kmyeo */
+  background-image: url('./images/backgrounds/taskmanager-background.png');
+}
+
+/* Move this to core */
+.wtaskvpadding {
+  flex: 1;
+}
+

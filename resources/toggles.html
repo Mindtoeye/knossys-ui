@@ -1,0 +1,621 @@
+<html>
+<head>
+<style>
+
+body {
+	 text-align: center;
+	 background: #5c5c5c;
+}
+
+section {
+  float: left;
+  min-width: 150px;
+  width: 13.33%;
+  padding: 25px 0;
+  /* min-height: 100px;*/
+}
+
+.checkbox {
+	position: relative;
+	display: inline-block;
+}
+
+.checkbox:after, .checkbox:before {
+	 font-family: Arial;
+	 font-feature-settings: normal;
+	 font-kerning: auto;
+	 font-language-override: normal;
+	 font-stretch: normal;
+	 font-style: normal;
+	 font-synthesis: weight style;
+	 font-variant: normal;
+	 font-weight: normal;
+	 text-rendering: auto;
+}
+
+.checkbox label {
+	 width: 90px;
+	 height: 42px;
+	 background: #ccc;
+	 position: relative;
+	 display: inline-block;
+	 border-radius: 46px;
+	 transition: 0.4s;
+}
+
+.checkbox label:after {
+	 content: '';
+	 position: absolute;
+	 width: 50px;
+	 height: 50px;
+	 border-radius: 100%;
+	 left: 0;
+	 top: -5px;
+	 z-index: 2;
+	 background: #fff;
+	 box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+	 transition: 0.4s;
+}
+ .checkbox input {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 z-index: 5;
+	 opacity: 0;
+	 cursor: pointer;
+}
+
+.checkbox input:hover + label:after {
+	 box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
+}
+
+.checkbox input:checked + label:after {
+	 left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-1 .checkbox input:checked + label {
+  background: #376ecb;
+}
+
+.model-1 .checkbox input:checked + label:after {
+  background: #4285f4;
+}
+
+.model-2 .checkbox label {
+	width: 75px;
+}
+
+.model-2 .checkbox label:after {
+  top: 0;
+  width: 42px;
+  height: 42px;
+}
+
+.model-2 .checkbox input:checked + label {
+	background: #4bd865;
+}
+
+.model-2 .checkbox input:checked + label:after {
+  left: 35px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-3 .checkbox label {
+  background: #fff;
+	border: 1px solid #eee;
+	height: 38px;
+}
+
+.model-3 .checkbox label:after {
+  background: #bbb;
+	top: 3px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+.model-3 .checkbox input:checked + label:after {
+  background: #3eb454;
+  left: 55px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-4 .checkbox label {
+  background: #bbb;
+	height: 25px;
+	width: 75px;
+}
+
+.model-4 .checkbox label:after {
+  background: #fff;
+	top: -8px;
+	width: 38px;
+	height: 38px;
+}
+
+.model-4 .checkbox input:checked + label {
+  background: #77c2bb;
+}
+
+.model-4 .checkbox input:checked + label:after {
+  background: #009688;
+	left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-5 .checkbox label {
+  background: #bbb;
+	height: 15px;
+	width: 85px;
+}
+
+.model-5 .checkbox label:after {
+  background: #fff;
+	top: -12px;
+	width: 36px;
+	height: 36px;
+}
+
+.model-5 .checkbox input:hover + label:after {
+  scale: 1.4;
+}
+
+.model-5 .checkbox input:checked + label {
+  background: #b66c0a;
+}
+
+.model-5 .checkbox input:checked + label:after {
+  background: #ff980f;
+  left: 50px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-6 .checkbox label {
+  background: #bbb;
+	height: 2px;
+	width: 60px;
+}
+
+.model-6 .checkbox label:after {
+  background: #bbb;
+	top: -16px;
+	width: 32px;
+	height: 32px;
+}
+
+.model-6 .checkbox input:checked + label {
+  background: #376ecb;
+}
+
+.model-6 .checkbox input:checked + label:after {
+  background: #4285f4;
+	left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-7 .checkbox label {
+  background: none;
+  border: 5px solid #404040;
+  height: 32px;
+}
+
+.model-7 .checkbox label:after {
+  background: #918f8f;
+  box-shadow: none;
+	top: 2px;
+	left: 2px;
+	width: 28px;
+	height: 28px;
+}
+
+.model-7 .checkbox input:checked + label {
+  border-color: #329043;
+}
+
+.model-7 .checkbox input:checked + label:after {
+  background: #3eb454;
+  left: 58px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-8 .checkbox label {
+  background: #ddd;
+	width: 95px;
+	border-radius: 10px;
+}
+
+.model-8 .checkbox label:after {
+	 background: #fff;
+	 border-radius: 10px;
+	 top: 0;
+	 width: 60px;
+	 height: 42px;
+}
+
+.model-8 .checkbox input:checked + label {
+	 background: #ff980f;
+}
+
+.model-8 .checkbox input:checked + label:after {
+	 left: 35px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-9 .checkbox label {
+	 background: #aaa;
+	 width: 90px;
+	 height: 32px;
+	 border-radius: 20px;
+}
+
+.model-9 .checkbox label:after {
+	 border-radius: 20px;
+	 top: 0;
+	 width: 50px;
+	 height: 32px;
+}
+
+.model-9 .checkbox input:checked + label {
+	 background: #256c32;
+}
+
+.model-9 .checkbox input:checked + label:after {
+	 background: #359a48;
+	 left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-10 .checkbox:after {
+	 content: 'On';
+	 color: #aaa;
+	 position: relative;
+	 right: 30px;
+	 bottom: 15px;
+}
+
+.model-10 .checkbox:before {
+	 content: 'Off';
+	 position: relative;
+	 left: 35px;
+	 bottom: 15px;
+	 color: #fff;
+	 z-index: 1;
+}
+
+.model-10 .checkbox label {
+	 width: 80px;
+	 background: #eaeaea;
+	 box-shadow: 0 0 1px 2px rgba(0, 0, 0, .15);
+}
+
+.model-10 .checkbox label:after {
+	 top: 0;
+	 width: 42px;
+	 height: 42px;
+}
+
+.model-10 .checkbox input:checked + label {
+	 background: #4bd865;
+}
+
+.model-10 .checkbox input:checked + label:after {
+	 left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-11 .checkbox:after, .model-11 .checkbox:before {
+	 content: 'OFF';
+	 position: absolute;
+	 right: 10px;
+	 top: 10px;
+	 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	 font-size: 12px;
+	 color: #90201f;
+}
+
+.model-11 .checkbox:before {
+	 content: 'ON';
+	 left: -40px;
+	 z-index: 1;
+	 color: #256c32;
+}
+
+.model-11 .checkbox label {
+	 background: #e3666c;
+	 height: 32px;
+	 border-radius: 0;
+	 box-shadow: 0 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.model-11 .checkbox label:after {
+	 background-color: #fff;
+	 filter-gradient: #fff, #fff, horizontal;
+	 background-image: linear-gradient(left, #fff 30%, #ddd 45%, #fff 50%, #ddd 55%, #fff 70%);
+	 border-radius: 0;
+	 box-shadow: none !important;
+	 transition: 0.1s;
+	 top: 0;
+	 width: 50px;
+	 height: 32px;
+}
+
+.model-11 .checkbox input:checked + label {
+	 background: #4bd865;
+}
+
+.model-11 .checkbox input:checked + label:after {
+	 left: 40px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-12 .checkbox {
+  color: white;
+	background: #2b2b2d;
+	height: 40px;
+	width: 160px;
+	border-radius: 50px;
+}
+
+.model-12 .checkbox:after, .model-12 .checkbox:before {
+	content: 'ON';
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	line-height: 40px;
+	font-size: 12px;
+}
+
+.model-12 .checkbox:before {
+	content: 'OFF';
+	z-index: 1;
+}
+
+.model-12 .checkbox label {
+	 background: #1e1e1e;
+	 height: 10px;
+	 width: 70px;
+	 margin: 0 5px;
+	 box-shadow: 0 0 2px 2px rgba(0, 0, 0, .3) inset;
+}
+
+.model-12 .checkbox label:after {
+	 background-color: #3f4545;
+	 background-image: linear-gradient(top, #666 0%, #3f4545 100%);
+	 top: -9px;
+	 width: 27px;
+	 height: 27px;
+}
+
+.model-12 .checkbox label:before {
+	 content: '';
+	 position: absolute;
+	 width: 14px;
+	 height: 14px;
+	 border-radius: 100%;
+	 transition: 0.4s;
+	 background: #151515;
+	 z-index: 3;
+	 left: 7px;
+	 top: -2px;
+}
+
+.model-12 .checkbox input:checked + label:after {
+	 left: 45px;
+}
+
+.model-12 .checkbox input:checked + label:before {
+	 background: #94da00;
+	 box-shadow: 0 0 5px #94da00;
+	 left: 52px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-13 .checkbox:after {
+	 content: 'OFF';
+	 font-family: Arial;
+	 position: absolute;
+	 color: #000000;
+	 top: 12px;
+	 right: 43px;
+}
+
+.model-13 .checkbox label {
+	 background: none;
+	 border: 3px solid #777;
+	 height: 34px;
+	 border-radius: 20px;
+}
+
+.model-13 .checkbox label:after {
+	 content: 'ON';
+	 font-family: Arial;
+	 color: #fff;
+	 line-height: 28px;
+	 text-indent: 100px;
+	 background: #777;
+	 overflow: hidden;
+	 box-shadow: none;
+	 border-radius: 14px;
+	 translateX: -50px;
+	 transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+	 top: 3px;
+	 left: auto;
+	 right: 2px;
+	 width: 28px;
+	 height: 28px;
+}
+
+.model-13 .checkbox input:checked + label {
+	 border-color: #329043;
+}
+
+.model-13 .checkbox input:checked + label:after {
+	 background: #3eb454;
+	 left: auto;
+	 translateX: 0px;
+	 transition: all 0.4s, width 0.2s 0.4s linear, text-indent 0.3s 0.4s linear;
+	 width: 85px;
+	 text-indent: 0;
+}
+
+/*-----------------------------------------------------------------*/
+
+.model-14 .checkbox:after, .model-14 .checkbox:before {
+	 content: 'OFF';
+	 position: absolute;
+	 right: 10px;
+	 top: 10px;
+	 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	 font-size: 12px;
+	 color: #90201f;
+}
+
+.model-14 .checkbox:before {
+	 content: 'ON';
+	 left: -40px;
+	 z-index: 1;
+	 color: #256c32;
+}
+
+.model-14 .checkbox label {
+	 background: #fff;
+	 height: 32px;
+	 border-radius: 0;
+	 box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}
+
+.model-14 .checkbox label:after {
+	 background: #90201f;
+	 border-radius: 0;
+	 box-shadow: none !important;
+	 transition: 0.3s;
+	 top: 0;
+	 width: 40px;
+	 height: 32px;
+}
+
+.model-14 .checkbox input:checked + label:after {
+	 background: #4bd865;
+	 left: 50px;
+}
+
+/*-----------------------------------------------------------------*/
+
+</style>
+</head>
+<body>
+
+
+<section class="model-1">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-2">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-3">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-4">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-5">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-6">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-7">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-8">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-9">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-10">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-11">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-12">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-13">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+<section class="model-14">
+  <div class="checkbox">
+    <input type="checkbox"/>
+    <label></label>
+  </div>
+</section>
+
+</body>
+</html>

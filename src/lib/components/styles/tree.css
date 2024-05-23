@@ -1,0 +1,35 @@
+
+.knossys-dark .ktree {
+  
+}
+
+.ktree {
+  color: #a19f9b;
+}
+
+.ktreenode {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  padding: 1px;
+}
+
+.ktreenode:hover {  
+  background: #d3d3d324;  
+}
+
+.ktreenode span {
+  padding: 1px;
+  margin: 0px;
+  white-space: nowrap
+}
+
+.ktreenode-connector {
+  font-size: 12pt;
+}
+
+.kselected {
+  color: #fbe9b6;
+}
+

@@ -1,0 +1,76 @@
+
+.knossys-dark .ktoolbar-horizontal {
+  display: flex;
+  flex-direction: row;
+  background: #121212;
+  padding: 2px;  
+  font-size: 12pt;
+}
+
+.knossys-dark .ktoolbar-vertical {
+  display: flex;
+  flex-direction: row;
+  background: #121212;
+  padding: 2px;
+  font-size: 12pt;
+  /* display: inline-block; */
+}
+
+.knossys-dark .ktoolbaritem {
+  flex: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px;
+  float: top;
+  margin: auto;
+  max-height: 27px;
+  min-width: 24px;
+  border: 1px solid #121212;
+  
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: center;
+}
+
+.ktoolbaritem:hover {
+  flex: 0;
+  background: #302f2f;
+  border: 1px solid #121212;
+  color: white;
+}
+
+.ktoolbaritem:active {
+  color: #f5f517;
+}
+
+.ktoolbar-vertical-label {
+  background: black;
+  color: #cdc9c9;
+  flex: 0;
+  writing-mode: vertical-rl;
+  font-family: Arial;
+  font-size: 11pt;
+  text-orientation: mixed;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding: 4px;
+}
+
+.ktoolbar-vertical-ribbon {
+  display: flex;  
+  flex-direction: column;
+  background: #121212;
+  padding: 2px;
+  font-size: 12pt;
+  display: inline-block;
+}
+
+.ktoolbaritem-toggled {
+  border: 1px solid #8d815f !important;
+}
+
+.ktoolbar-padding {
+  flex: 1;
+}

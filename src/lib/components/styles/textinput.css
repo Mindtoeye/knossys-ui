@@ -1,0 +1,30 @@
+
+.knossys-dark .ktextinput {
+  margin: 2px;
+  font-family: Arial;
+  background: #4c4c4c;
+  border: 1px inset #646464;
+  color: #cdc9c9;
+  padding: 2px 4px 2px 4px;  
+}
+
+.ktextinput:focus { 
+  outline: none !important;
+  border: 1px solid grey;
+}
+
+.ktextinput-tiny {
+  font-size: 8pt;
+}
+
+.ktextinput-regular {
+  font-size: 10pt;
+}
+
+.ktextinput-medium {
+  font-size: 14pt;
+}
+
+.ktextinput-large {
+  font-size: 16pt;  
+}

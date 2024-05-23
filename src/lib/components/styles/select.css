@@ -1,0 +1,34 @@
+.knossys-dark .kselect {  
+  border: 1px solid #5c5c5c;
+  background-color: #363535;
+  color: #cdc9c9;
+  margin-bottom: 2px;
+}
+
+.kselect-tiny {
+  height: 22px;
+  font-size: 7pt;
+  line-height: 9pt;
+  padding: 2px 20px 2px 2px;
+}
+
+.kselect-regular {
+  height: 27px;
+  font-size: 10pt;
+  line-height: 9pt;
+  padding: 2px 20px 2px 2px;
+}
+
+.kselect-medium {
+  height: 38px;
+  font-size: 15pt;
+  line-height: 19pt;
+  padding: 2px 20px 2px 2px;
+}
+
+.kselect-large {
+  height: 58px;
+  font-size: 25pt;
+  line-height: 25pt;
+  padding: 2px 20px 6px 2px;
+}
