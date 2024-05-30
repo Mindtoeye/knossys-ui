@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Drydock from './Drydock';
+import Knossys from './Knossys';
 
-ReactDOM.render(<React.StrictMode><Drydock /></React.StrictMode>,document.getElementById('root'));
+ReactDOM.render(<React.StrictMode><Knossys /></React.StrictMode>,document.getElementById('root'));

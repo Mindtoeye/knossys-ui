@@ -1,14 +1,13 @@
 
 .ktaskbar {  
-  background: grey;
+  background: #252424;
   border: 1px solid #484848;
-  background: #95939357;
+  /* background: #95939357; */
   border-radius: 2px;
   padding: 4px;
-
   flex: 0;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 }
 
 .ktaskbar .ktaskbarmain {
@@ -140,7 +139,7 @@
   color: white;
 }
 
-.ktaskbar .kinfopanel {
+.ktaskbar .ktaskbar-infopanel {
   border: 1px inset #4c4c4c;
   background: #3c3c3c;
   min-width: 100px;

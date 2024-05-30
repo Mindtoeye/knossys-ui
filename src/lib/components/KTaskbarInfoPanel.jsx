@@ -49,7 +49,7 @@ class KTaskbarInfoPanel extends Component {
   render () {
     const { time } = this.state; // retrieve the time from state
 
-    return (<div className="kinfopanel">
+    return (<div className="ktaskbar-infopanel">
       {time.toLocaleTimeString()}
     </div>);
   }
