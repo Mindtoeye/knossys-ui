@@ -1,6 +1,6 @@
 
 .drydockpanel {
-  position: fixed;
+  position: absolute;
   right: 10px;
   bottom: 10px;
   width: 177px;

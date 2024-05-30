@@ -444,7 +444,7 @@ class Desktop extends Component {
 
   /**
    * 
-   */  
+   */
   onDebug (e) {
     let icons=this.props.iconManager.getIcons ();
     console.log (icons);
@@ -452,16 +452,52 @@ class Desktop extends Component {
 
   /**
    * 
+   */
+  createDryDockPanel () {
+    return (<div className="drydockpanel">
+      <KButton onClick={(e) => this.onAutolayoutChange(e,this.state.layout)} style={{width: "100%"}}>Layout</KButton>
+      <KButton onClick={(e) => this.onDebug(e)} style={{width: "100%"}}>Debug</KButton>
+
+      <div className="drydockbox">
+        <p>Snap to grid</p>
+        <input type="checkbox" checked={this.state.snap} onChange={this.onSnapChange} />
+      </div>
+
+      <div className="drydockbox">
+        <p>Arrange</p>
+        <KButton classes="desktop_button_icon" onClick={(e) => this.onAutolayoutChange(e,Desktop.LAYOUT_HORIZONTAL)}><RiArrowLeftRightLine /></KButton>            
+        <KButton classes="desktop_button_icon" onClick={(e) => this.onAutolayoutChange(e,Desktop.LAYOUT_VERTICAL)}><RiArrowUpDownFill /></KButton>
+      </div>          
+
+      <div className="drydockbox">
+        <p>Show Grid</p>
+        <input type="checkbox" checked={this.state.showGrid} onChange={(e) => this.onShowGrid(e)} />
+      </div>                  
+
+      <div className="drydockbox">
+        <p>Icon Size: {this.state.iconDim}px</p>
+        <div className="drydockconstrictor">
+          <Slider min={32} max={128} defaultValue={32} value={this.state.iconDim} onChange={this.onIconSizeChange} />
+        </div>
+      </div>
+    </div>);
+  }
+
+  /**
+   * 
    */  
   render() {
     let grid;
+    let status;
+    let drydockpanel;    
     let activeicons = [];
 
     if (this.state.showGrid==true) {
       grid=this.windowTools.generateGrid();
     }
 
-    let status=<div className="mousestatus">{this.state.mouseX + ", " + this.state.mouseY}</div>;
+    status=<div className="mousestatus">{this.state.mouseX + ", " + this.state.mouseY}</div>;
+    drydockpanel=this.createDryDockPanel ();
        
     let icons=this.props.iconManager.getIcons ();
 
@@ -481,34 +517,7 @@ class Desktop extends Component {
         {grid}
         {activeicons}
         {status}
-  	    <div className="drydockpanel">
-	        <KButton onClick={(e) => this.onAutolayoutChange(e,this.state.layout)} style={{width: "100%"}}>Layout</KButton>
-          <KButton onClick={(e) => this.onDebug(e)} style={{width: "100%"}}>Debug</KButton>
-
-  	      <div className="drydockbox">
-  	        <p>Snap to grid</p>
-  	        <input type="checkbox" checked={this.state.snap} onChange={this.onSnapChange} />
-  	      </div>
-
-          <div className="drydockbox">
-            <p>Arrange</p>
-            <KButton classes="desktop_button_icon" onClick={(e) => this.onAutolayoutChange(e,Desktop.LAYOUT_HORIZONTAL)}><RiArrowLeftRightLine /></KButton>            
-            <KButton classes="desktop_button_icon" onClick={(e) => this.onAutolayoutChange(e,Desktop.LAYOUT_VERTICAL)}><RiArrowUpDownFill /></KButton>
-          </div>          
-
-          <div className="drydockbox">
-            <p>Show Grid</p>
-            <input type="checkbox" checked={this.state.showGrid} onChange={(e) => this.onShowGrid(e)} />
-          </div>                  
-
-  	      <div className="drydockbox">
-  	        <p>Icon Size: {this.state.iconDim}px</p>
-  	        <div className="drydockconstrictor">
-  	          <Slider min={32} max={128} defaultValue={32} value={this.state.iconDim} onChange={this.onIconSizeChange} />
-  	        </div>
-  	      </div>
-  	    </div>
-
+        {drydockpanel} 
         {this.props.children}        
       </div>
     );

@@ -149,10 +149,14 @@ class Knossys extends Component {
     this.faces=[<RiStackshareLine/>,<VscFileSubmodule/>, <MdPermIdentity />, <GiPortal />];
 
     this.state={
+      session: {
+        loggedin: false,
+        token: ""
+      },
       trigger: 0,
       showLabels: true,
       showInfo: true,      
-      globalSettings: {}      
+      globalSettings: {}
     };
 
     this.update = this.update.bind(this);
@@ -186,6 +190,18 @@ class Knossys extends Component {
 
     //this.testTimer=setInterval(this.testDisabling,10000);
 
+    if (this.state.session.loggedin==false) {
+      this.appManager.addApplication ({
+        title: "Knossys Login",
+        type: WindowConstants.WINDOW_DIALOG,
+        modal: true,
+        centered: true,
+        width: 320,
+        height: 200
+      });
+    }
+
+    /*
     this.appManager.addApplication ({
       title: "Knossys Task Manager",
       type: WindowConstants.WINDOW_DEFAULT,
@@ -194,6 +210,7 @@ class Knossys extends Component {
       isSystem: true,
       content: <WindowTaskManager appManager={this.appManager} />
     });
+    */
 
     this.updateWindowStack ();    
   }
@@ -396,6 +413,18 @@ class Knossys extends Component {
    *
    */
   render() {
+    if (this.state.session.loggedin==false) {
+      return (
+        <div className="knossys">
+          <WindowManager 
+            state={this.state}
+            onKeyDown={this.onKeyDown}
+            settings={this.state.globalSettings}
+            appManager={this.appManager}>          
+          </WindowManager>
+        </div>);
+    }
+
     return (
       <div className="knossys">
         <Desktop 
