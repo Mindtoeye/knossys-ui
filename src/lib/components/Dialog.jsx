@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import Draggable, {DraggableCore} from 'react-draggable';
 
-import { KButton } from '@knossys/knossys-ui-core';
+import KButton from './KButton';
 
 import { uuidv4 } from './utils/uuid';
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../../css/taskbar.css';
+import './css/taskbar.css';
 
 /**
  *

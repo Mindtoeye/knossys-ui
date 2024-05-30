@@ -1,7 +1,7 @@
 
 .desktopContent {
   margin: 0px;
-  padding: 3px;
+  padding: 0px;
   border: 0px solid red;
   height: 100%;
   overflow: hidden;
@@ -17,6 +17,9 @@
   background-image: url('images/backgrounds/background-dark-01.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;  
 }
 
 .unselectable {

@@ -7,7 +7,7 @@ import { HiOutlineTerminal } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
 import { BiHelpCircle } from 'react-icons/bi';
 
-import '../../css/taskbar.css';
+import './css/taskbar.css';
 
 /**
  *

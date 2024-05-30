@@ -7,7 +7,9 @@
 }
 
 .desktop {
-  position: absolute;
+  flex: 1;
+
+  /*position: absolute;*/
   margin: 0px;
   padding: 0px;
 

@@ -1,0 +1,168 @@
+
+.ktaskbar {  
+  background: grey;
+  border: 1px solid #484848;
+  background: #95939357;
+  border-radius: 2px;
+  padding: 4px;
+
+  flex: 0;
+  display: flex;
+  flex-direction: row;  
+}
+
+.ktaskbar .ktaskbarmain {
+  position: fixed;
+  bottom: 35px;
+  left: 0px;
+  width: 263px;
+  height: 333px;
+  border: 1px solid #7d7c7c59;
+  border-radius: 5px;
+  background: black;
+  background: linear-gradient(0deg, black 0%, #292929 23%, rgba(255, 255, 255, 0) 86%);
+  -webkit-box-shadow: 0px 0px 4px 3px rgb(0 0 0 / 45%);
+  -moz-box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 4px 3px rgb(0 0 0 / 45%);
+  display: flex;
+  flex-direction: column;
+}
+
+.ktaskbar .ktaskbarmain .ktaskbartitle {
+  color: #cbcbcb;
+  text-align: center;
+  font-size: 8pt;
+  padding: 2px;
+}
+
+.ktaskbar .ktaskbarmain .ktaskbarhsep {
+  height: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #3a3939;
+  padding: 0px;
+}
+
+.ktaskbar .ktaskbarmain .ktasbarcont {
+  padding: 0px;
+  color: #cbcbcb;
+  font-size: 8pt;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.ktaskbar .ktaskbarmain .kverticaltoolbar {
+  color: #8b8b8b;
+  font-size: 25pt;
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* width: 50px;*/
+}
+
+.ktaskbar .ktaskbarmain .ktaskbarpanel {
+  flex: 1;
+  padding: 0px;
+  margin: 0px;
+  background: #80808024;
+}
+
+.taskicon {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.taskicon:hover {
+  background: #d5d5d5;
+}
+
+.taskiconimg {
+  width: 42px;
+  /*height: 50px;*/
+  filter: opacity(0.5);
+}
+
+.ktaskbar .kicon {
+  height: 20px;
+  margin: 2px;
+  margin-left: 6px;
+  margin-right: 4px;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.ktaskbar .kicon:hover {
+  background: #404040;
+}
+
+.ktaskbar .ktaskicon {
+  margin-left: 6px;
+  margin-right: 4px;
+  margin-bottom: 14px;
+  border: 0px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  color: #d1cec8;
+}
+
+.ktaskbar .ktaskicon:hover {
+  background: #404040;
+}
+
+.ktaskbar .kvsep {
+  width: 1px;
+  background: #484747;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.ktaskbar .kicon .klabel {
+  color: #cbcbcb;
+  font-family: Arial;
+  font-size: 9pt;
+  line-height: 17pt;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.ktaskbar .kicon .klabel:hover {
+  color: white;
+}
+
+.ktaskbar .kinfopanel {
+  border: 1px inset #4c4c4c;
+  background: #3c3c3c;
+  min-width: 100px;
+  color: #cbcbcb;
+  text-align: center;
+  padding: 1px;
+  padding-top: 2px;
+  margin: 1px;
+  font-size: 8pt;
+  line-height: 13pt;
+  font-family: sans-serif;
+}
+
+.kmenuvstretcher {
+  flex: 1;
+}
+
+.kmenuhstretcher {
+  flex: 1;
+}
+
+.ktaskbar .kstarticon {
+  color: #d1cec8;
+  font-size: 14pt;
+}

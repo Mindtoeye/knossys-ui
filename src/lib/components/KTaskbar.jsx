@@ -10,7 +10,7 @@ import { HiOutlineTerminal } from 'react-icons/hi';
 import { FaTasks } from 'react-icons/fa';
 import { VscFileSubmodule } from 'react-icons/vsc';
 
-import '../../css/taskbar.css';
+import './css/taskbar.css';
 
 /**
  *

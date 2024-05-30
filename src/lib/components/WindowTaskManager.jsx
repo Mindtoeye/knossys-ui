@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 
-import { KnossysInfoPanel, KButton, KList, KToolbar, KToolbarItem } from '@knossys/knossys-ui-core';
-
 import { AiOutlineSortAscending, AiOutlineSortDescending, AiOutlineToTop } from 'react-icons/ai';
 import { BsStack } from 'react-icons/bs';
 import { VscDebug } from 'react-icons/vsc';
 import { AiOutlineWindows } from 'react-icons/ai';
 
 import { SortOperations } from '@knossys/knossys-js-algorithm';
+
+import KnossysInfoPanel from './KnossysInfoPanel';
+import KButton from './KButton';
+import KList from './KList';
+import KToolbar from './KToolbar';
+import KToolbarItem from './KToolbarItem';
 
 import DataTools from './utils/DataTools';
 
