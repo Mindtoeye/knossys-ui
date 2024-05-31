@@ -20,6 +20,8 @@ import WindowTaskManager from './lib/components/WindowTaskManager';
 import ApplicationManager from './lib/components/ApplicationManager';
 import KTaskbar from './lib/components/KTaskbar';
 
+import KnossysLoginDialog from './lib/components/KnossysLoginDialog';
+
 import '../css/main.css';
 import '../css/drydock.css';
 import './lib/components/css/desktop.css';
@@ -197,7 +199,8 @@ class Knossys extends Component {
         modal: true,
         centered: true,
         width: 320,
-        height: 200
+        height: 200,
+        content: <KnossysLoginDialog appManager={this.appManager} />
       });
     }
 
