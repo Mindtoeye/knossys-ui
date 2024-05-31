@@ -215,7 +215,7 @@ class DataTools {
    */
    getRandomInt(max) {
      return Math.floor(Math.random() * max);
-   }   
+   }      
 }
 
 export default DataTools;
