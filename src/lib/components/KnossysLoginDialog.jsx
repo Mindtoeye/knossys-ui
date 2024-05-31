@@ -51,10 +51,10 @@ export class KnossysLoginDialog extends React.Component {
         <img className="klogo-img" src={logo} />
       </div>      
       <label for="uname"><b>Username</b></label>      
-      <KTextInput size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.username} handleChange={this.handleUsernameChange}></KTextInput>
+      <KTextInput placeholder="Enter Username" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.username} handleChange={this.handleUsernameChange}></KTextInput>
 
       <label for="psw"><b>Password</b></label>
-      <KTextInput size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.password} handleChange={this.handlePasswordChange}></KTextInput>
+      <KTextInput type={KTextInput.TYPE_PASSWORD} placeholder="Enter Password" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.password} handleChange={this.handlePasswordChange}></KTextInput>
     </div>);
   }
 }

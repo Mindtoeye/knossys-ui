@@ -29,6 +29,7 @@ class KTextInput extends Component {
   static TYPE_ALPHANUMERIC = 2;
   static TYPE_ALPHAFLOAT = 3;
   static TYPE_BINARY = 4;
+  static TYPE_PASSWORD = 5;
 
   /**
    * 
@@ -135,6 +136,11 @@ class KTextInput extends Component {
   render () {
     let classes="ktextinput ktextinput-regular";
     let style;
+    let typed="text";
+
+    if (this.state.type==KTextInput.TYPE_PASSWORD) {
+      typed="password";
+    }
 
     if (this.props.size) {
       if (this.props.size==KTextInput.TINY) {
@@ -163,7 +169,7 @@ class KTextInput extends Component {
     }
 
     return (
-      <input type="text" className={classes} style={style} value={this.state.value} onChange={(e) => this.handleTextChange (e.target.value)} />
+      <input type={typed} placeholder={this.props.placeholder} className={classes} style={style} value={this.state.value} onChange={(e) => this.handleTextChange (e.target.value)} />
     );
   }
 }
