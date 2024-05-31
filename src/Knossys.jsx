@@ -196,10 +196,10 @@ class Knossys extends Component {
       this.appManager.addApplication ({
         title: "Knossys Login",
         type: WindowConstants.WINDOW_DIALOG,
-        modal: true,
+        modal: false,
         centered: true,
-        width: 320,
-        height: 200,
+        width: 400,
+        height: 400,
         content: <KnossysLoginDialog appManager={this.appManager} />
       });
     }
