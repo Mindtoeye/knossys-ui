@@ -46,7 +46,7 @@ class Dialog extends React.Component {
    *
    */
   componentDidMount() {
-    console.log ("componentDidMount("+this.props.resizable+")");
+    //console.log ("componentDidMount("+this.props.resizable+")");
     
     if (this.props.resizable) {
       if (this.props.resizable==true) {
@@ -132,12 +132,30 @@ class Dialog extends React.Component {
   onClose (e,anId) {
     console.log ("onClose ("+anId+")");
 
-    this.stopResize();
+    if (this.props.onClose) {
+      console.log ("We've got an onClose, calling ...");
 
-    if (this.props.appManager) {
-      this.props.appManager.deleteApp (anId);
+      if (this.props.onClose ()==true) {
+        this.stopResize();
+
+        if (this.props.appManager) {
+          this.props.appManager.deleteApp (anId);
+        } else {
+          console.log ("Error: no application manager available");
+        }
+      } else {
+        console.log ("Not closing!");
+      }
     } else {
-      console.log ("Error: no application manager available");
+      console.log ("No onClose provided, bottoming out ...");
+
+      this.stopResize();
+
+      if (this.props.appManager) {
+        this.props.appManager.deleteApp (anId);
+      } else {
+        console.log ("Error: no application manager available");
+      }
     }
   }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import KWindowBase from './KWindowBase';
 import KTextInput from './KTextInput';
 
 import logo from  './css/images/klogo-inverted.png';
@@ -10,12 +11,12 @@ import './styles/wmanager.css';
 /**
  *
  */
-export class KnossysLoginDialog extends React.Component {
+export class KnossysLoginDialog extends KWindowBase {
 
   /**
    *
    */
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state={
@@ -33,6 +34,8 @@ export class KnossysLoginDialog extends React.Component {
   handleUsernameChange (aValue) {
     this.setState({
       username: aValue
+    },()=> {
+      this.updateSessionData (this.state);
     });
   }
 
@@ -42,19 +45,58 @@ export class KnossysLoginDialog extends React.Component {
   handlePasswordChange (aValue) {
     this.setState({
       password: aValue
+    },()=> {
+      this.updateSessionData (this.state);
     });
   }
 
+  /**
+   *
+   */
+  updateSessionData () {
+    if(this.props.onSessionData) {
+      this.props.onSessionData (this.state);
+    }
+  }
+
+  /**
+   *
+   */
+  onClose () {
+    console.log ("onClose ()");
+
+    if (this.state.username=="") {
+      return (false);
+    }
+
+    if (this.state.password=="") {
+      return (false);
+    }    
+
+    return (true);
+  }
+
+  /**
+   *
+   */
   render () {
     return (<div className="kdialog-content">
       <div className="klogo">
-        <img className="klogo-img" src={logo} />
+        <div>
+          <img className="klogo-img" src={logo} />
+        </div>  
+        <label style={{color: "#b9b8b8"}}>Cloud-Based Distributed Knowledge System</label>
       </div>      
-      <label for="uname"><b>Username</b></label>      
-      <KTextInput placeholder="Enter Username" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.username} handleChange={this.handleUsernameChange}></KTextInput>
 
-      <label for="psw"><b>Password</b></label>
-      <KTextInput type={KTextInput.TYPE_PASSWORD} placeholder="Enter Password" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.password} handleChange={this.handlePasswordChange}></KTextInput>
+      <div style={{display: "flex", flexDirection: "row", marginLeft: "20px", marginRight: "20px"}}>
+        <label style={{width: "92px"}}><b>Username</b></label>      
+        <KTextInput placeholder="Enter Username" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.username} handleChange={this.handleUsernameChange}></KTextInput>
+      </div>
+
+      <div style={{display: "flex", flexDirection: "row", marginLeft: "20px", marginRight: "20px"}}>
+        <label style={{width: "92px"}}><b>Password</b></label>
+        <KTextInput type={KTextInput.TYPE_PASSWORD} placeholder="Enter Password" size={KTextInput.REGULAR} style={{width: "100%"}} value={this.state.password} handleChange={this.handlePasswordChange}></KTextInput>
+      </div>
     </div>);
   }
 }

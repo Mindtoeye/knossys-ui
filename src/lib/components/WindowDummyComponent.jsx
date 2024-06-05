@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import KWindowBase from './KWindowBase';
+
 /**
  * 
  */
-class WindowDummyComponent extends Component {
+class WindowDummyComponent extends KWindowBase {
 
    /**
     * 
@@ -17,7 +19,7 @@ class WindowDummyComponent extends Component {
     * 
     */
    render () {
-   	  return (<div></div>);
+   	return (<div></div>);
    }
 }
 

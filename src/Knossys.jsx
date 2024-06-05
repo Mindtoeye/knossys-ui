@@ -153,7 +153,9 @@ class Knossys extends Component {
     this.state={
       session: {
         loggedin: false,
-        token: ""
+        token: "",
+        username: "",
+        password: ""
       },
       trigger: 0,
       showLabels: true,
@@ -177,6 +179,10 @@ class Knossys extends Component {
 
     this.appManager=new ApplicationManager ();
     this.appManager.setOnUpdate (this.updateWindowStack);    
+
+    // Login
+
+    this.onSessionData=this.onSessionData.bind(this);
   }
 
   /**
@@ -199,8 +205,8 @@ class Knossys extends Component {
         modal: false,
         centered: true,
         width: 400,
-        height: 400,
-        content: <KnossysLoginDialog appManager={this.appManager} />
+        height: 280,
+        content: <KnossysLoginDialog onSessionData={this.onSessionData} appManager={this.appManager} />
       });
     }
 
@@ -415,13 +421,27 @@ class Knossys extends Component {
   /**
    *
    */
+  onSessionData (data) {
+    //console.log ("onSessionData ()");
+
+    let session=this.dataTools.deepCopy(this.state.session);
+ 
+    session.username=data.username;
+    session.password=data.password;
+     
+    this.setState ({
+      session: session
+    });
+  }
+
+  /**
+   *
+   */
   render() {
     if (this.state.session.loggedin==false) {
       return (
         <div className="knossys">
           <WindowManager 
-            state={this.state}
-            onKeyDown={this.onKeyDown}
             settings={this.state.globalSettings}
             appManager={this.appManager}>          
           </WindowManager>
@@ -436,8 +456,7 @@ class Knossys extends Component {
           faces={this.faces} 
           snap={true} 
           launch={this.launch}>
-          <WindowManager 
-            onKeyDown={this.onKeyDown}
+          <WindowManager
             settings={this.state.globalSettings}
             appManager={this.appManager}>          
           </WindowManager>

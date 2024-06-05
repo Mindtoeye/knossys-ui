@@ -1,11 +1,13 @@
 import React from "react";
 
+import KWindowBase from './KWindowBase';
+
 import { uuidv4 } from './utils/uuid';
 
 /**
  *
  */
-export class WindowDummyContent extends React.Component {
+export class WindowDummyContent extends KWindowBase {
 
   /**
   *

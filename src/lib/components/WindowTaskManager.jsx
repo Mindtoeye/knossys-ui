@@ -242,7 +242,7 @@ class WindowTaskManager extends Component {
    * 
    */
   render () {
-    console.log ("WindowTaskManager:render("+this.state.sort+")");
+    //console.log ("WindowTaskManager:render("+this.state.sort+")");
 
     let windowList=[];
 

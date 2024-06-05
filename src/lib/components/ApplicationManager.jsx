@@ -49,6 +49,27 @@ export default class ApplicationManager extends ApplicationDriver {
   /**
    *
    */
+  getAppById (anId) {
+    console.log ("getAppById ("+anId+")");
+
+    let appData=this.getAppsAll();
+
+    for (let i=0;i<appData.length;i++) {
+      let app=appData [i].data;
+
+      if (app.id) {
+        if (app.id==anId) {
+          return (appData [i]);
+        }
+      }
+    }
+
+    return (null);
+  }
+
+  /**
+   *
+   */
   toggleApp (anId) {
     console.log ("toggleApp ("+anId+")");
 
@@ -74,7 +95,7 @@ export default class ApplicationManager extends ApplicationDriver {
    *
    */
   deleteApp (anId) {
-    console.log ("deleteApp ("+anId+")");
+    //console.log ("deleteApp ("+anId+")");
 
     let appData=this.getAppsAll();
 
@@ -82,9 +103,24 @@ export default class ApplicationManager extends ApplicationDriver {
       let app=appData [i].data;
 
       if (app.id==anId) {
-        console.log ("Removing application ...");
+        console.log ("Removing application ("+anId+") ...");
+
+        if (appData [i].window) {
+          if (appData [i].window.onClose) {
+            if (appData [i].window.onClose ()==false) {
+              return;
+            }
+          } else {
+            console.log ("app does not have an onClose handler");
+          }
+        } else {
+          console.log ("app object does not have a window field");
+        }
+
         appData.splice(i, 1);
+
         this.setApps (appData);
+
         return;
       }
     }
@@ -134,11 +170,32 @@ export default class ApplicationManager extends ApplicationDriver {
 
   /**
    *
+   */ 
+  setSelf (id,windowContent) {
+    console.log ("setSelf ("+id+")");
+
+    if (windowContent.onClose) {
+      console.log("valid");
+    } else {
+      console.log ("invalid");
+    }
+
+    let app=this.getAppById (id);
+
+    if (app) {
+      app.window=windowContent;
+    } else {
+      console.log ("Internal error: unable to locate app to assign window content");
+    }
+  }
+
+  /**
+   *
    */
   addApplication (anApplication, aCallback) {    
     console.log ("addApplication ()");
 
-    console.log (anApplication);
+    //console.log (anApplication);
 
     for (let i=0;i<this.apps.length;i++) {
       let windata=this.apps [i].data;
