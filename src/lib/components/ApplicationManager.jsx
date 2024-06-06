@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import ApplicationDriver from './ApplicationDriver';
 import DefaultApp from './DefaultApp';
 import DataTools from './utils/DataTools';
+import KWindowTools from './KWindowTools';
 import WindowConstants from './WindowConstants';
 import WindowDummyContent from './WindowDummyContent';
 import WindowDummyComponent from './WindowDummyComponent';
@@ -107,8 +108,13 @@ export default class ApplicationManager extends ApplicationDriver {
 
         if (appData [i].window) {
           if (appData [i].window.onClose) {
-            if (appData [i].window.onClose ()==false) {
-              return;
+            let evaluation=appData [i].window.onOk ();
+            if (evaluation!=null) {
+              if (evaluation.result!=KWindowTools.ACCEPTED) {
+                // Replace this with the react version
+                alert (evaluation.message);
+                return;                
+              }
             }
           } else {
             console.log ("app does not have an onClose handler");

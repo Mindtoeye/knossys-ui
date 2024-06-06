@@ -437,7 +437,9 @@ class Knossys extends Component {
   /**
    *
    */
-  render() {
+  render() {    
+    let alert;
+    
     if (this.state.session.loggedin==false) {
       return (
         <div className="knossys">
@@ -445,6 +447,7 @@ class Knossys extends Component {
             settings={this.state.globalSettings}
             appManager={this.appManager}>          
           </WindowManager>
+          {alert}
         </div>);
     }
 
@@ -465,6 +468,7 @@ class Knossys extends Component {
           showlabels={this.state.showLabels}
           showinfo={this.state.showInfo}>
         </KTaskbar>
+        {alert}
       </div>);
   }
 }

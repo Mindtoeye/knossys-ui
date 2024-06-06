@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import KWindowBase from './KWindowBase';
+import KWindowTools from './KWindowTools';
 import KTextInput from './KTextInput';
 
 import logo from  './css/images/klogo-inverted.png';
@@ -62,18 +63,18 @@ export class KnossysLoginDialog extends KWindowBase {
   /**
    *
    */
-  onClose () {
+  onOk () {
     console.log ("onClose ()");
 
     if (this.state.username=="") {
-      return (false);
+      return (KWindowTools.createWindowReject ("Can't leave username blank"));
     }
 
     if (this.state.password=="") {
-      return (false);
+      return (KWindowTools.createWindowReject ("Can't leave password blank"));
     }    
 
-    return (true);
+    return (KWindowTools.createWindowAccept ());
   }
 
   /**

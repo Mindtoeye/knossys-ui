@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import KWindowTools from './KWindowTools';
+
 /**
  *
  */
@@ -30,7 +32,7 @@ export class KWindowBase extends React.Component {
   onClose () {
     console.log ("onClose () Implement in child window!");
 
-    return (true);
+    return (KWindowTools.createWindowAccept ());
   }
 
   /**
@@ -39,7 +41,7 @@ export class KWindowBase extends React.Component {
   onOk () {
     console.log ("onOk () Implement in child window!");
 
-    return (true);    
+    return (KWindowTools.createWindowAccept ());
   }
 
   /**
@@ -48,7 +50,7 @@ export class KWindowBase extends React.Component {
   onCancel () {
     console.log ("onCancel () Implement in child window!");
 
-    return (true);    
+    return (KWindowTools.createWindowAccept ());
   }    
 
   /**
@@ -57,7 +59,7 @@ export class KWindowBase extends React.Component {
   onMinimize () {
     console.log ("onMinimize () Implement in child window!");
 
-    return (true);    
+    return (KWindowTools.createWindowAccept ());
   }  
 
   /**
@@ -66,7 +68,7 @@ export class KWindowBase extends React.Component {
   onMaximize () {
     console.log ("onMaximize () Implement in child window!");
 
-    return (true);    
+    return (KWindowTools.createWindowAccept ());
   }  
 
   /**
